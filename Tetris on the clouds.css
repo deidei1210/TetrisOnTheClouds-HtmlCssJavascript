@@ -1,0 +1,283 @@
+*{
+    /* margin表示页面与浏览器边缘不留空隙 */
+     margin:0;
+     /* padding表示填充内部完全填满，不留空隙 */
+     padding:0;
+      /*我想要设置的边框和内边距包含在总宽高之内*/  
+     box-sizing:border-box;
+ }
+ /* 背景颜色 */
+ .Background{
+     /*生成绝对定位元素*/
+     position:absolute;
+    /* 100%将背景铺满浏览器的页面 */
+     width:100%;
+     height:100%;
+     /* 使得元素居中 */
+     display:flex;
+     /* 设置元素对齐的方式，一般是水平方向上的 */
+     justify-content:center;
+     /* 与justify-content不同的是，这个属性一般是竖直方向上的排版方式 */
+     align-items: center;
+     /* 将云朵图片引入，作为背景图片 */
+     background-image: url(clauds.JPG);
+     /* 表示将图片铺满整个页面 */
+     background-size: cover;
+ }
+ /* 这中间居然还一定要有空格 */
+ .Background .color{
+     position: absolute;
+ /* 模糊滤镜，数值越大越模糊 */
+     filter: blur(200px);
+ }
+ /* 选择器选择第一个 */
+ .Background .color:nth-child(1){
+     background:#fd746c;
+     width:800px;
+     height:800px;
+     top: -450px;
+ }
+ .Background .color:nth-child(2){
+     background:#cf8bf3;
+     width:600px;
+     height:600px;
+     bottom: -150px;
+     left:100px;
+ }
+ .Background .color:nth-child(3){
+     background:#fdb99b;
+     width:400px;
+     height:400px;
+     bottom: 50px;
+     right:100px;
+ }
+
+
+/* 对标题的样式进行设置 */
+.text{
+    /* 选择标题的字体 */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* 设置为绝对定位 */
+    position:absolute;
+    left:37%;
+    top:30px;
+    /* 对字体填充进行设置 */
+    /* 对背景设置线性渐变 */
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 255, 0.514),hsla(180, 100%, 70%, 0.503) 10%,hsla(288, 100%, 50%, 0.503) 20%,hsla(300, 100%, 40%, 0.5) 30%, hsla(240, 100%, 90%, 0.5) 40%, hsla(180, 100%, 50%, 0.503) 50%,rgba(204, 204, 255, 0.527) 60%,rgba(204, 0, 204, 0.507) 70%,rgba(204, 0, 255, 0.507) 80%,rgba(102, 255, 255, 0.503) 90%,rgba(0, 0, 255, 0.497) 100%);
+    /* 表示文本填充，在这里将文字设置成透明，这样可以在文字后面透出背景的颜色 */
+    -webkit-text-fill-color: transparent;
+    /* 以盒子内的文字作为裁剪区域向外裁剪，文字之外的区域都将被裁剪掉，这样就造出了渐变色彩的文字 */
+    -webkit-background-clip: text;
+    /* 设置背景尺寸 */
+    -webkit-background-size: 200% 100%; 
+    /* 设置字体的动画，运动的函数，持续时间是4s，线性运动，无限循环 */
+    -webkit-animation: masked-animation 4s linear infinite;
+    /* 设置字体大小 */
+    font-size: 35px;
+}
+/* 定义动画，背景的颜色条的初始位置和结束位置，完成一次动画 */
+@keyframes masked-animation {
+    0% {
+        background-position: 0  0;
+    }
+    100% {
+        background-position: -100%  0;
+    }
+}
+
+
+/* 提示游玩操作信息 */
+.information{
+    /* 设置为绝对定位 */
+    position:absolute;
+    left:950px;
+    top:110px;
+    display:flex;
+    z-index:2;
+}
+
+.information .I{
+    /* 定位 */
+    position:absolute;
+
+    width:50px;
+    height:50px;
+    display:inline-block;
+    border-radius:10px; 
+    text-decoration:none;
+   /* 将方框内的元素居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 把图标变成白色的了 */
+    color:#fff;
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(57, 56, 56, 0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+
+.information .J{
+    position:absolute;
+    left:-50px;
+    top:50px;
+
+    width:50px;
+    height:50px;
+    display:inline-block;
+    border-radius:10px; 
+    text-decoration:none;
+   /* 将方框内的元素居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 把图标变成白色的了 */
+    color:#fff;
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+.information .K{
+    position:absolute;
+    left:0px;
+    top:50px;
+
+    width:50px;
+    height:50px;
+    display:inline-block;
+    border-radius:10px; 
+    text-decoration:none;
+   /* 将方框内的元素居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 把图标变成白色的了 */
+    color:#fff;
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+.information .L{
+    position:absolute;
+    left:50px;
+    top:50px;
+
+    width:50px;
+    height:50px;
+    display:inline-block;
+    border-radius:10px; 
+    text-decoration:none;
+   /* 将方框内的元素居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 把图标变成白色的了 */
+    color:#fff;
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+
+ /* 游戏区域背景 */
+.container {
+    /* 设置游戏区域的大小 */
+    width: 300px;
+    height: 540px;
+    background: rgba(255,255,255,0.1);
+    background-size: 200px 360px;
+    /* background-color: black; */
+    /* 定位 */
+    position:absolute;
+    left:38%;
+    bottom:110px;
+    /* 设置为圆角矩形 */
+    border-radius:10px; 
+    text-decoration:none;
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+/* 移动的模型，设置小方块在移动的过程中时的参数 */
+.activity_model {
+    width: 30px;
+    height: 30px;
+    /* opacity: 0.8; */
+    box-sizing: border-box;
+    border: .3px solid #676767;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(252,212,93,0.5);
+    /* url("logo.png") center center no-repeat; */
+    background-size: 15px;
+    /* box-shadow: 2px 2px 5px #888888; */
+    /* 边框的颜色 */
+    border:1px solid rgba(255,255,255,0.4);
+    border-right:1px solid rgba(255,255,255,0.2);
+    border-bottom:1px;
+    /* 加上阴影 */
+    box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+    /* 背景模糊 */
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    /* 这样就做出毛玻璃的效果了 */
+}
+/* 固定住的模型样式参数设置 */
+.fixed_model {
+    width: 30px;
+    height: 30px;
+    /* background-color: #9e9e9e; */
+    box-sizing: border-box;
+    border: .3px solid #676767;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.2);
+     /* 边框的颜色 */
+     border:1px solid rgba(255,255,255,0.4);
+     border-right:1px solid rgba(255,255,255,0.2);
+     border-bottom:1px;
+     /* 加上阴影 */
+     box-shadow: 0px 5px 45px rgba(0,0,0,0.1);
+     /* 背景模糊 */
+     backdrop-filter: blur(4px);
+     overflow: hidden;
+     /* 这样就做出毛玻璃的效果了 */
+    /* url("logo.png") center center no-repeat; */
+    background-size: 15px;
+    box-shadow: 2px 2px 5px #888888;
+}

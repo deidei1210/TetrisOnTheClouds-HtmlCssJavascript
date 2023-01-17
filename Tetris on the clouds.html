@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 标题 -->
+    <title>Tetris On The Clouds</title>
+    <!-- 引入外联CSS样式表 -->
+    <link rel="stylesheet" href="Tetris on the clouds.css">
+    <!-- //引入lodash工具库 -->
+    <script src="lodash.min.js"></script>
+    <!-- 引入js文件 -->
+    <script src="Tetris on the clouds.js"></script>
+
+</head>
+    <!-- 这里采用的是onload，这样就可以在页面刚加载出来的时候直接开始执行js文件中的函数 -->
+    <body onload="init()">
+        <!-- 背景显示 -->
+        <div class="Background">
+            <!-- 标题 -->
+            <h1 class='text'>Tetris On The Clouds</h1>
+            <!-- 背景 -->
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <!-- 右边栏的游玩提示信息 -->
+            <div class="information">
+                <div class="I">i</div>
+                <div class="J">j</div>
+                <div class="K">k</div>         
+                <div class="L">l</div>
+            </div>
+            <!-- 显示得分 -->
+
+             <!-- 游戏界面 -->
+            <div id="container" class="container"></div>
+        </div>
+    </body>
+</html>
